@@ -1,0 +1,29 @@
+set nocompatible
+filetype plugin indent on
+
+colorscheme gruvbox
+syntax enable
+set background=dark
+let g:airline_theme='base16_gruvbox_dark_hard'
+
+set hlsearch
+set incsearch
+noremap <C-L> :set hlsearch!<CR><C-L>
+
+set autoindent
+set smartindent
+
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+set ignorecase
+set smartcase
+
+set number
+set ruler
+set wildmode=longest,list
+
+let g:go_template_autocreate = 0
+
+runtime macros/matchit.vim

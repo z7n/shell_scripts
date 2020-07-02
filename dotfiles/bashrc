@@ -1,0 +1,32 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# PROMPT Settings
+PSUSER="\[$(tput setaf 81)\]"
+PSHOST="\[$(tput setaf 118)\]"
+PSDIR="\[$(tput setaf 172)\]"
+RESET="\[$(tput sgr0)\]"
+
+#Git completion
+#. ~/.git-completion.bash
+
+# User specific aliases and functions
+export PATH=$PATH:$HOME/.cargo/bin/:$HOME/go/bin/
+export EDITOR=vim
+alias rustbook="rustup doc --book"
+eval $(dircolors ~/.dircolors)
+eval $(keychain --eval id_ecdsa)
