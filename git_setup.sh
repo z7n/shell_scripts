@@ -1,5 +1,10 @@
 #!/bin/bash
-GIT_PROMPT_FILE="/usr/share/git-core/contrib/completion/git-prompt.sh"
+if [[ -f /etc/fedora-release ]]; then
+  GIT_PROMPT_FILE="/usr/share/git-core/contrib/completion/git-prompt.sh"
+fi
+if [[ -f /etc/lsb-release ]]; then
+  GIT_PROMPT_FILE="/usr/lib/git-core/git-sh-prompt"
+fi
 
 git config --global color.ui true
 git config --global core.editor vim
