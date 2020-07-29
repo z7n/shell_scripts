@@ -1,8 +1,9 @@
 #!/bin/bash
-if [[ -f /etc/fedora-release ]]; then
+. config.sh
+if [[ $OS_RELEASE == "fedora" ]]; then
   GIT_PROMPT_FILE="/usr/share/git-core/contrib/completion/git-prompt.sh"
 fi
-if [[ -f /etc/lsb-release ]]; then
+if [[ $OS_RELEASE == "ubuntu" ]]; then
   GIT_PROMPT_FILE="/usr/lib/git-core/git-sh-prompt"
 fi
 
