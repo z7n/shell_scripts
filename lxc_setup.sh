@@ -1,6 +1,6 @@
 #!/bin/bash
 . config.sh
-if [[ $OS_RELEASE == "fedora" ]]; then
+if [[ $OS_DISTRO == "fedora" ]]; then
   sudo dnf install -y lxc lxc-templates
   echo "${USER} veth virbr0 10" | sudo tee -a /etc/lxc/lxc-usernet
   mkdir -p ${HOME}/.config/lxc/
@@ -15,7 +15,7 @@ if [[ $OS_RELEASE == "fedora" ]]; then
   chmod +x ${HOME}/.local/share
   chmod +x ${HOME}/.local/share/lxc
 fi
-if [[ $OS_RELEASE == "ubuntu" ]]; then
+if [[ $OS_DISTRO == "ubuntu" ]]; then
   sudo apt install -y lxc libpam-cgfs
   echo "${USER} veth lxcbr0 10" | sudo tee -a /etc/lxc/lxc-usernet
   mkdir -p ${HOME}/.config/lxc/
