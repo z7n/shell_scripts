@@ -2,8 +2,7 @@
 . config.sh
 if [[ $OS_DISTRO == "fedora" ]]; then
   if [[ ! -z $DESKTOP_SESSION ]]; then
-    WORKSTATION_PKGS="gnome-tweaks gnome-shell-extension-pomodoro gnome-shell-extension-openweather vinagre \
-      papirus-icon-theme"
+    WORKSTATION_PKGS="gnome-shell-extension-pomodoro"
   fi
   SERVER_PKGS="tmux vim keychain jq git tig buildah podman"
   sudo dnf install -y $WORKSTATION_PKGS $SERVER_PKGS
