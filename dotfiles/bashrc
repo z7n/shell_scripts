@@ -1,5 +1,9 @@
 # .bashrc
 
+if [ -z $PS1 ]; then
+  return
+fi
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
@@ -10,9 +14,10 @@ PSUSER="\[$(tput setaf 81)\]"
 PSHOST="\[$(tput setaf 118)\]"
 PSDIR="\[$(tput setaf 172)\]"
 RESET="\[$(tput sgr0)\]"
-PS1="${PSUSER}[\u${PSHOST}@\h${PSDIR}:\w]${RESET}$ "
+PS1='[$(tput setaf 81)\u@$(tput setaf 118)\h:$(tput setaf 172)\w$(tput sgr0)$(__git_ps1 " (%s)")]\$ '
 
 # User specific aliases and functions
+eval $(keychain --eval id_git)
 export EDITOR="vim"
 alias cpv='rsync -ah --info=progress2'
 alias rustbook='rustup doc --book'
