@@ -10,11 +10,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # PROMPT Settings
-PSUSER="\[$(tput setaf 81)\]"
-PSHOST="\[$(tput setaf 118)\]"
-PSDIR="\[$(tput setaf 172)\]"
-RESET="\[$(tput sgr0)\]"
-PS1='[$(tput setaf 81)\u@$(tput setaf 118)\h:$(tput setaf 172)\w$(tput sgr0)$(__git_ps1 " (%s)")]\$ '
+PS1='[\[\033[38;5;76m\]\u@\h:\w\[\033[0m\] $(__git_ps1 " (%s)")]$ '
 
 # User specific aliases and functions
 eval $(keychain --eval id_git)
