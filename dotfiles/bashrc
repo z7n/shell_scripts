@@ -10,11 +10,10 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # PROMPT Settings
-PS1='[\[\033[38;5;76m\]\u@\h:\w\[\033[0m\] $(__git_ps1 " (%s)")]$ '
+PS1='[\[\033[1;38;5;106m\]\u@\h:\w\[\033[0m\] $(__git_ps1 " (%s)")]$ '
 
 # User specific aliases and functions
 eval $(keychain --eval id_git)
 export EDITOR="vim"
 alias cpv='rsync -ah --info=progress2'
 alias rustbook='rustup doc --book'
-
